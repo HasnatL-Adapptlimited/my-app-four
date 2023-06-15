@@ -67,3 +67,7 @@ label {
   margin-bottom: 4px;
   display: block;
 }
+
+.active {
+  color: black;
+}
