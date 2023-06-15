@@ -6,7 +6,7 @@ import { authGuard } from './auth/auth.guard';
 import { checkoutGuard } from './checkout.guard';
 
 const routes: Routes = [
-  { path: 'cart', component: CartComponent, canActivate: [authGuard], canDeactivate: [checkoutGuard]},
+  { path: 'cart', component: CartComponent, canActivate: [authGuard], canDeactivate: [() =>  confirm('You have pending items in your cart. Do you want to continue?')]},
   { path: '**', component: PageNotFoundComponent}
 ];
 
