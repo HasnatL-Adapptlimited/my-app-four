@@ -9,7 +9,8 @@ const routes: Routes = [
     component: CartComponent,
     canActivate: [authGuard],
     canDeactivate: [() =>  confirm('You have pending items in your cart. Do you want to continue?')]},
-  { path: '**', component: PageNotFoundComponent}
+  {path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)},
+  { path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
